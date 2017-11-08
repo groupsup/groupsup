@@ -6,3 +6,7 @@ Template.User_Header.helpers({
     return FlowRouter.getParam('username');
   },
 });
+
+Template.User_Header.onRendered(function() {
+	$('.ui.dropdown').dropdown();
+});
