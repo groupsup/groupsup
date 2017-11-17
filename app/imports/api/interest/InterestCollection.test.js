@@ -9,8 +9,8 @@ import { removeAllEntities } from '/imports/api/base/BaseUtilities';
 if (Meteor.isServer) {
   describe('InterestCollection', function testSuite() {
     const name = 'Software Engineering';
-    const description = 'Tools and techniques for team-based development of high quality software systems';
-    const defineObject = { name, description };
+    const groups_id = [6,8,10];
+    const defineObject = { name, groups_id };
 
     before(function setup() {
       removeAllEntities();
@@ -26,7 +26,7 @@ if (Meteor.isServer) {
       // Check that fields are available
       const doc = Interests.findDoc(docID);
       expect(doc.name).to.equal(name);
-      expect(doc.description).to.equal(description);
+      expect(doc.groups_id).to.equal(groups_id);
       // Check that multiple definitions with the same name fail
       expect(function foo() { Interests.define(defineObject); }).to.throw(Error);
       // Check that we can dump and restore a Interest.

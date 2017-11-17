@@ -18,8 +18,15 @@ class InterestCollection extends BaseCollection {
    */
   constructor() {
     super('Interest', new SimpleSchema({
-      name: { type: String },
-      description: { type: String, optional: true },
+      name: { 
+        type: String 
+      },
+      groups_id: { 
+        type: Array 
+      },
+      'groups_id.$': {
+        type: Number
+      },
     }, { tracker: Tracker }));
   }
 
@@ -34,13 +41,13 @@ class InterestCollection extends BaseCollection {
    * @throws {Meteor.Error} If the interest definition includes a defined name.
    * @returns The newly created docID.
    */
-  define({ name, description }) {
+  define({ name, groups_id }) {
     check(name, String);
-    check(description, String);
+    check(groups_id, [Number]);
     if (this.find({ name }).count() > 0) {
       throw new Meteor.Error(`${name} is previously defined in another Interest`);
     }
-    return this._collection.insert({ name, description });
+    return this._collection.insert({ name, groups_id });
   }
 
   /**
@@ -109,8 +116,8 @@ class InterestCollection extends BaseCollection {
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const name = doc.name;
-    const description = doc.description;
-    return { name, description };
+    const groups_id = doc.groups_id;
+    return { name, groups_id };
   }
 }
 
