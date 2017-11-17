@@ -21,25 +21,21 @@ class ProfileCollection extends BaseCollection {
     super('Profile', new SimpleSchema({
       username: { type: String },
       // Remainder are optional
-      firstName: { type: String, optional: true },
-      lastName: { type: String, optional: true },
+      first_name: { type: String },
+      last_name: { type: String },
+      user_role: [Number],
       bio: { type: String, optional: true },
-      interests: { type: Array, optional: true },
-      'interests.$': { type: String },
-      title: { type: String, optional: true },
-      location: { type: String, optional: true },
-      picture: { type: SimpleSchema.RegEx.Url, optional: true },
-      github: { type: SimpleSchema.RegEx.Url, optional: true },
-      facebook: { type: SimpleSchema.RegEx.Url, optional: true },
-      instagram: { type: SimpleSchema.RegEx.Url, optional: true },
+      interests: [String], 
+      image: { type: SimpleSchema.RegEx.Url, optional: true },
+      groups_id: [Number]
     }, { tracker: Tracker }));
   }
 
   /**
    * Defines a new Profile.
    * @example
-   * Profiles.define({ firstName: 'Philip',
-   *                   lastName: 'Johnson',
+   * Profiles.define({ first_name: 'Philip',
+   *                   last_name: 'Johnson',
    *                   username: 'johnson',
    *                   bio: 'I have been a professor of computer science at UH since 1990.',
    *                   interests: ['Application Development', 'Software Engineering', 'Databases'],
@@ -51,17 +47,15 @@ class ProfileCollection extends BaseCollection {
    * @param { Object } description Object with required key username.
    * Remaining keys are optional.
    * Username must be unique for all users. It should be the UH email account.
-   * Interests is an array of defined interest names.
+   * Interests is an array of defined interest ids.
    * @throws { Meteor.Error } If a user with the supplied username already exists, or
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', username, bio = '', location = '', interests = [], picture = '', title = '',
-    github = '', facebook = '', instagram = '' }) {
+  define({ first_name = '', last_name = '', user_role = [], username, bio = '', interests = [], image= '', groups_id = [] }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, username: String, bio: String,
-      location: String, picture: String, title: String };
-    check({ firstName, lastName, username, bio, location, picture, title }, checkPattern);
+    const checkPattern = { first_name: String, last_name: String, username: String, image: String };
+    check({ first_name, last_name, username, bio, image }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
       throw new Meteor.Error(`${username} is previously defined in another Profile`);
@@ -75,8 +69,7 @@ class ProfileCollection extends BaseCollection {
       throw new Meteor.Error(`${interests} contains duplicates`);
     }
 
-    return this._collection.insert({ firstName, lastName, username, bio, location, interests, picture, title, github,
-      facebook, instagram });
+    return this._collection.insert({ first_name, last_name, username, bio, interests, image, groups_id });
   }
 
   /**
@@ -86,18 +79,14 @@ class ProfileCollection extends BaseCollection {
    */
   dumpOne(docID) {
     const doc = this.findDoc(docID);
-    const firstName = doc.firstName;
-    const lastName = doc.lastName;
+    const first_name = doc.first_name;
+    const last_name = doc.last_name;
     const username = doc.username;
     const bio = doc.bio;
-    const location = doc.location;
     const interests = doc.interests;
-    const picture = doc.picture;
-    const title = doc.title;
-    const github = doc.github;
-    const facebook = doc.facebook;
-    const instagram = doc.instagram;
-    return { firstName, lastName, username, bio, interests, location, picture, title, github, facebook, instagram };
+    const image = doc.image;
+    const groups_id = doc.groups_id;
+    return { first_name, last_name, username, bio, interests, image, groups_id };
   }
 }
 
