@@ -21,12 +21,7 @@ class InterestCollection extends BaseCollection {
       name: { 
         type: String 
       },
-      groups_id: { 
-        type: Array 
-      },
-      'groups_id.$': {
-        type: Number
-      },
+      groups_id: [Number],
     }, { tracker: Tracker }));
   }
 

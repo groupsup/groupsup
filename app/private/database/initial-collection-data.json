@@ -6,15 +6,15 @@
       "contents": [
         {
           "name": "Swimming",
-          "groups_id": [1,6,7]
+          "groups_id": []
         },
         {
           "name": "Surfing",
-          "groups_id": [1,6,8]
+          "groups_id": []
         },
         {
           "name": "Hookers",
-          "groups_id": [1,2]
+          "groups_id": []
         }
       ]
     },
