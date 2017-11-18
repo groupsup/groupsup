@@ -21,13 +21,14 @@ class ProfileCollection extends BaseCollection {
     super('Profile', new SimpleSchema({
       username: { type: String },
       // Remainder are optional
-      first_name: { type: String },
-      last_name: { type: String },
-      user_role: [Number],
+      first_name: { type: String, optional: true },
+      last_name: { type: String, optional: true },
       bio: { type: String, optional: true },
-      interests: [String], 
+      interests: { type: Array, optional: true },
+      'interests.$': { type: String }, 
       image: { type: SimpleSchema.RegEx.Url, optional: true },
-      groups_id: [Number]
+      groups_id: { type: Array, optional: true },
+      'groups_id.$': { type: Number }
     }, { tracker: Tracker }));
   }
 
@@ -54,7 +55,7 @@ class ProfileCollection extends BaseCollection {
    */
   define({ first_name = '', last_name = '', user_role = [], username, bio = '', interests = [], image= '', groups_id = [] }) {
     // make sure required fields are OK.
-    const checkPattern = { first_name: String, last_name: String, username: String, image: String };
+    const checkPattern = { first_name: String, last_name: String, bio: String, username: String, image: String };
     check({ first_name, last_name, username, bio, image }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
