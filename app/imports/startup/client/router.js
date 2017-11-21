@@ -36,7 +36,6 @@ FlowRouter.route('/directory', {
 
 /*                        USER ROUTES                      */
 
-
 function addUserBodyClass() {
   $('body').addClass('user-layout-body');
 }
@@ -52,6 +51,14 @@ const userRoutes = FlowRouter.group({
   triggersExit: [removeUserBodyClass],
 });
 
+export const dashboardPageRouteName = 'Dashboard_Page';
+userRoutes.route('/dashboard', {
+  name: dashboardPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: dashboardPageRouteName });
+  },
+});
+
 export const profilePageRouteName = 'Profile_Page';
 userRoutes.route('/profile', {
   name: profilePageRouteName,
@@ -60,11 +67,11 @@ userRoutes.route('/profile', {
   },
 });
 
-export const filterPageRouteName = 'Filter_Page';
-userRoutes.route('/filter', {
-  name: filterPageRouteName,
+export const groupsPageRouteName = 'Groups_Page';
+userRoutes.route('/groups', {
+  name: groupsPageRouteName,
   action() {
-    BlazeLayout.render('User_Layout', { main: filterPageRouteName });
+    BlazeLayout.render('User_Layout', { main: groupsPageRouteName });
   },
 });
 
