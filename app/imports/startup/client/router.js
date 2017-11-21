@@ -67,11 +67,27 @@ userRoutes.route('/profile', {
   },
 });
 
-export const groupsPageRouteName = 'Groups_Page';
-userRoutes.route('/groups', {
-  name: groupsPageRouteName,
+export const editprofilePageRouteName = 'Edit_Profile_Page';
+userRoutes.route('/edit-profile', {
+  name: editprofilePageRouteName,
   action() {
-    BlazeLayout.render('User_Layout', { main: groupsPageRouteName });
+    BlazeLayout.render('User_Layout', { main: editprofilePageRouteName });
+  },
+});
+
+export const allgroupsPageRouteName = 'All_Groups_Page';
+userRoutes.route('/all-groups', {
+  name: allgroupsPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: allgroupsPageRouteName });
+  },
+});
+
+export const groupPageRouteName = 'Group_Page';
+userRoutes.route('/group', {
+  name: groupPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: groupPageRouteName });
   },
 });
 
