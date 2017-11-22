@@ -6,20 +6,20 @@
 
 .landing-section-2 {
   padding: 20px 10px 20px 10px;
-  background-color: #E5F9E7;
-  color:  #00B5AD;
+  background-color: #1b1c1d;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .landing-section-3 {
   padding: 20px 10px 30px 30px;
-  background-color: #00B5AD;
+  background-color: #045232;
   color: #E5F9E7;
 }
 
 .landing-section-5 {
   padding: 20px 10px 20px 10px;
   background-color: #00B5AD;
-  color: #E5F9E7;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 
@@ -30,9 +30,12 @@
 }
 
 .landing-section-header {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 36px;
+}
+
+.eight.wide.column p {
+  font-size: 18px;
 }
 
 .masthead.segment {
@@ -50,4 +53,16 @@
   margin-bottom: 0em;
   font-size: 4em;
   font-weight: normal;
+}
+
+.get_started_button {
+  padding-top: 5px;
+}
+
+.ui.inverted.segment.landing, .ui.primary.inverted.segment {
+  background-color: #045232;
+}
+
+.ui.secondary.inverted.pointing.menu {
+  border-width: 0px;
 }
