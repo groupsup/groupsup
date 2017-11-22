@@ -1,10 +1,20 @@
 <template name="User_Header">
-  <div class="ui top fixed borderless inverted teal menu">
-    <div class="ui container">
-      <div class="item"><h1>BowFolios</h1></div>
-      <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Profile</a>
-      <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">Filter</a>
-      <div class="right aligned item">{{> Cas_Login }}</div>
+  <div class="ui top fixed borderless inverted menu" style="background-color: #004F2F">
+    <div class="ui container" style="height: 56px">
+      <img class="ui small image" src="https://cdn.discordapp.com/attachments/377192880705503245/377897370009993217/received_1710263905659040.jpeg" style="width: 66px;height: 56px;">
+      <div class="item"><h1>GroupsUp</h1></div>
+      <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Dashboard</a>
+      <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">Browse</a>
+      <div class="right aligned item">
+      	<div class="ui dropdown">
+      		<div class="text">{{routeUserName}}</div>
+      		<i class="dropdown icon"></i>
+      		<div class="menu">
+      			<div class="item">Edit Profile...</div> 
+            <div class="item">Log Out</div>
+      		</div>
+        </div>
+    	</div>
     </div>
   </div>
 </template>
