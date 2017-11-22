@@ -1,20 +1,18 @@
 <template name="Landing_Page">
-
-  <div class="landing-section-1">
-    <div class="ui grid">
-
-      <div class="row">
-        <div class="ui right aligned sixteen wide column">
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <div class="right item">
           {{> Cas_Login }}
         </div>
-
       </div>
-      <div class="row">
-        <div class="ui center aligned sixteen wide column">
-          <h1 class="landing-section-1-welcome">Welcome to BowFolios</h1>
-          <h3 class="landing-section-1-tagline">Professional portfolios and networking for the University of Hawaii community</h3>
-        </div>
-      </div>
+    </div>
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        GroupsUp
+      </h1>
+      <h2>Groups and Events for UHM Students</h2>
+      {{> Cas_Get_Started }}
     </div>
   </div>
 
