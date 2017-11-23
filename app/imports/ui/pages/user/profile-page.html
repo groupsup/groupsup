@@ -2,14 +2,29 @@
 
   {{#if Template.subscriptionsReady}}
 
-  <div class="ui text container segment">
-    <div class="ui dividing header">
-      Profile
-      <a class="{{isActiveRoute "Edit_Profile_Page"}} item" href="{{pathFor "Edit_Profile_Page" username=routeUserName}}">Edit</a>
-    </div>
-      <div class="ui container">
-        <h5>Name {{profile.firstName}} {{profile.lastName}}</h5>
+  <div class="ui segments">
+    <div class="ui dividing segment">
+      <div class="ui left floated header">
+        Profile
       </div>
+      <div class="ui right floated header">
+        <a class="{{isActiveRoute "Edit_Profile_Page"}} item" href="{{pathFor "Edit_Profile_Page" username=routeUserName}}">Edit</a>
+      </div>
+    </div>
+    <div class="ui hidden clearing divider"></div>
+    <!--
+    <div class="ui dividing header">
+      <div class="left floated header">
+        Profile
+      </div>
+      <div class="right floated header">
+        <a class="{{isActiveRoute "Edit_Profile_Page"}} item" href="{{pathFor "Edit_Profile_Page" username=routeUserName}}">Edit</a>
+      </div>
+    </div>
+    -->
+    <div class="ui text container segment">
+        <h5>Name {{profile.firstName}} {{profile.lastName}}</h5>
+    </div>
     <!--
     <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
 
