@@ -3,8 +3,10 @@
     <div class="ui container" style="height: 56px">
       <img class="ui small image" src="https://cdn.discordapp.com/attachments/377192880705503245/377897370009993217/received_1710263905659040.jpeg" style="width: 66px;height: 56px;">
       <div class="item"><h1>GroupsUp</h1></div>
-      <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Dashboard</a>
-      <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">Browse</a>
+      <a class="{{isActiveRoute "Dashboard_Page"}} item" href="{{pathFor "Dashboard_Page" username=routeUserName}}">Dashboard</a>
+      <a class="{{isActiveRoute "All_Groups_Page"}} item" href="{{pathFor "All_Groups_Page" username=routeUserName}}">Groups</a>
+      <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Profile</a>
+
       <div class="right aligned item">
       	<div class="ui dropdown">
       		<div class="text">{{routeUserName}}</div>
