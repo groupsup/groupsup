@@ -36,7 +36,6 @@ FlowRouter.route('/directory', {
 
 /*                        USER ROUTES                      */
 
-
 function addUserBodyClass() {
   $('body').addClass('user-layout-body');
 }
@@ -52,6 +51,14 @@ const userRoutes = FlowRouter.group({
   triggersExit: [removeUserBodyClass],
 });
 
+export const dashboardPageRouteName = 'Dashboard_Page';
+userRoutes.route('/dashboard', {
+  name: dashboardPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: dashboardPageRouteName });
+  },
+});
+
 export const profilePageRouteName = 'Profile_Page';
 userRoutes.route('/profile', {
   name: profilePageRouteName,
@@ -60,11 +67,27 @@ userRoutes.route('/profile', {
   },
 });
 
-export const filterPageRouteName = 'Filter_Page';
-userRoutes.route('/filter', {
-  name: filterPageRouteName,
+export const editprofilePageRouteName = 'Edit_Profile_Page';
+userRoutes.route('/edit-profile', {
+  name: editprofilePageRouteName,
   action() {
-    BlazeLayout.render('User_Layout', { main: filterPageRouteName });
+    BlazeLayout.render('User_Layout', { main: editprofilePageRouteName });
+  },
+});
+
+export const allgroupsPageRouteName = 'All_Groups_Page';
+userRoutes.route('/all-groups', {
+  name: allgroupsPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: allgroupsPageRouteName });
+  },
+});
+
+export const groupPageRouteName = 'Group_Page';
+userRoutes.route('/group', {
+  name: groupPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: groupPageRouteName });
   },
 });
 
