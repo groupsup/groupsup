@@ -5,12 +5,17 @@
   <div class="ui text container segment">
     <div class="ui dividing header">
       Profile
+      <a class="{{isActiveRoute "Edit_Profile_Page"}} item" href="{{pathFor "Edit_Profile_Page" username=routeUserName}}">Edit</a>
     </div>
+      <div class="ui container">
+        <h5>Name {{profile.firstName}} {{profile.lastName}}</h5>
+      </div>
+    <!--
     <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
 
       <div class="fields">
-        {{> Text_Form_Control label="First" placeholder="First name" value=profile.firstName errorMessage=(fieldError "firstName")}}
-        {{> Text_Form_Control label="Last" placeholder="Last name" value=profile.lastName errorMessage=(fieldError "lastName")}}
+        {{> Text value=profile.firstName errorMessage=(fieldError "firstName")}}
+        {{> Text value=profile.lastName errorMessage=(fieldError "lastName")}}
 
       </div>
 
@@ -26,13 +31,14 @@
       {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Short bio statement here" errorMessage=(fieldError "bio")}}
 
 
-      <button class="ui primary button" type="submit">Submit</button>
+      <button class="ui primary button" type="submit">Edit</button>
       {{#if displaySuccessMessage}}
       <div class="ui success message">
         <p>Profile data successfully updated.</p>
       </div>
       {{/if}}
     </form>
+    -->
   </div>
 
   {{/if}}

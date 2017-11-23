@@ -1,4 +1,4 @@
-<template name="Profile_Page">
+<template name="Edit_Profile_Page">
 
   {{#if Template.subscriptionsReady}}
 
@@ -11,7 +11,10 @@
       <div class="fields">
         {{> Text_Form_Control label="First" placeholder="First name" value=profile.firstName errorMessage=(fieldError "firstName")}}
         {{> Text_Form_Control label="Last" placeholder="Last name" value=profile.lastName errorMessage=(fieldError "lastName")}}
+      </div>
 
+      <div class="field">
+        {{> Text_Form_Control label="Picture" placeholder="Picture URL" value=profile.picture errorMessage=(fieldError "picture url")}}
       </div>
 
       <div class="field">

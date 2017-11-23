@@ -33,10 +33,15 @@ Template.Profile_Page.helpers({
   interests() {
     const profile = Profiles.findDoc(FlowRouter.getParam('username'));
     const selectedInterests = profile.interests;
-    return profile && _.map(Interests.findAll(),
-            function makeInterestObject(interest) {
-              return { label: interest.name, selected: _.contains(selectedInterests, interest.name) };
-            });
+    return profile && _.map(
+        Interests.findAll(),
+        function makeInterestObject(interest) {
+          return { label: interest.name, selected: _.contains(selectedInterests, interest.name) };
+        },
+    );
+  },
+  routeUserName() {
+    return FlowRouter.getParam('username');
   },
 });
 
