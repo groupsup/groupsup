@@ -5,3 +5,5 @@ import './club-page.js';
 import './club-page-directory.html';
 import './edit-profile-page.html';
 import './edit-profile-page';
+import './dashboard.html';
+import './dashboard.js';
