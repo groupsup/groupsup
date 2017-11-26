@@ -1,5 +1,13 @@
 footer {
-	position: absolute;
-	width: 100%;
-	bottom: 0;
+	height: 171px;
+}
+
+.page-wrap {
+	min-height: 100%;
+	height: -171px;
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
 }

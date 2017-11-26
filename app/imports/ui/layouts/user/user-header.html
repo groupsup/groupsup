@@ -12,7 +12,8 @@
       		<div class="text">{{routeUserName}}</div>
       		<i class="dropdown icon"></i>
       		<div class="menu">
-      			<div class="item"><i class="edit icon"></i>Edit Profile...</div> 
+      			<div class="item">
+              <a class="dropdown-menu" href="{{pathFor "Edit_Profile_Page" username=routeUserName}}"><i class="edit icon"></i>Edit Profile...</a></div> 
             <div class="item">{{> Cas_Login }}</div>
       		</div>
         </div>
