@@ -19,6 +19,19 @@
       ]
     },
     {
+      "name": "GroupCollection",
+      "contents": [
+        {
+          "name": "Strange Club",
+          "interest_id": []
+        },
+        {
+          "name": "The Club",
+          "interest_id": []
+        }
+      ]
+    },
+    {
       "name": "ProfileCollection",
       "contents": [
         {
