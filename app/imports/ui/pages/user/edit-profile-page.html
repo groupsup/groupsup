@@ -9,19 +9,19 @@
     <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
 
       <div class="fields">
-        {{> Text_Form_Control label="First" placeholder="First name" value=profile.firstName errorMessage=(fieldError "firstName")}}
-        {{> Text_Form_Control label="Last" placeholder="Last name" value=profile.lastName errorMessage=(fieldError "lastName")}}
+        {{> Text_Form_Control label="First" placeholder="First name" value=profile.first_name errorMessage=(fieldError "first_name")}}
+        {{> Text_Form_Control label="Last" placeholder="Last name" value=profile.last_name errorMessage=(fieldError "last_name")}}
       </div>
 
       <div class="field">
-        {{> Text_Form_Control label="Picture" placeholder="Picture URL" value=profile.picture errorMessage=(fieldError "picture url")}}
+        {{> Text_Form_Control label="Picture" placeholder="Picture URL" value=profile.image errorMessage=(fieldError "picture url")}}
       </div>
-
+      <!--
       <div class="field">
         {{> Text_Form_Control label="Major" placeholder="Enter Major" value=profile.title errorMessage=(fieldError "title")}}
         {{> Text_Form_Control label="Campus" placeholder="Enter Campus" value=profile.location errorMessage=(fieldError "location")}}
       </div>
-
+      -->
       <div class="field">
         {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
       </div>
