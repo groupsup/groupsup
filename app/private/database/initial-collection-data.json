@@ -18,19 +18,7 @@
         }
       ]
     },
-    {
-      "name": "GroupCollection",
-      "contents": [
-        {
-          "name": "Strange Club",
-          "interest_id": []
-        },
-        {
-          "name": "The Club",
-          "interest_id": []
-        }
-      ]
-    },
+
     {
       "name": "ProfileCollection",
       "contents": [
@@ -40,7 +28,6 @@
           "username": "altenber",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Evolutionary Computation"
           ],
           "image": "/images/altenberg.jpg"
         },
@@ -50,7 +37,6 @@
           "username": "baek",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Computer Vision"
           ],
           "image": "/images/baek.jpg"
         },
@@ -60,8 +46,6 @@
           "username": "esb",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Mobile Networks",
-            "Sailing"
           ],
           "image": "/images/biagioni.jpg"
         },
@@ -71,8 +55,6 @@
           "username": "binsted",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Mars",
-            "Imu Cooking"
           ],
           "image": "/images/binsted.jpg"
         },
@@ -80,11 +62,8 @@
           "first_name": "Henri",
           "last_name": "Casanova",
           "username": "henric",
-          "github": "henricasanova",
           "bio": "I am a Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Surfing",
-            "Photography"
           ],
           "image": "/images/casanova.jpg"
         },
