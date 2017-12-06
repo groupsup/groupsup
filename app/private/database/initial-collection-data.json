@@ -87,6 +87,18 @@
             "Photography"
           ],
           "image": "/images/casanova.jpg"
+        },
+        {
+          "first_name": "Nolan",
+          "last_name": "Laranio",
+          "username": "nlaranio",
+          "github": "nlaranio",
+          "bio": "I am a Professor of Information and Computer Sciences at the University of Hawaii.",
+          "interests": [
+            "Surfing",
+            "Photography"
+          ],
+          "image": "/images/casanova.jpg"
         }
       ]
     }
