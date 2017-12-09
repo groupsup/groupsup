@@ -75,11 +75,11 @@ userRoutes.route('/edit-profile', {
   },
 });
 
-export const allgroupsPageRouteName = 'All_Groups_Directory';
+export const allgroupsdirectoryPageRouteName = 'All_Groups_Directory';
 userRoutes.route('/all-groups', {
-  name: allgroupsPageRouteName,
+  name: allgroupsdirectoryPageRouteName,
   action() {
-    BlazeLayout.render('User_Layout', { main: allgroupsPageRouteName });
+    BlazeLayout.render('User_Layout', { main: allgroupsdirectoryPageRouteName });
   },
 });
 
