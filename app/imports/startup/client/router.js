@@ -75,7 +75,7 @@ userRoutes.route('/edit-profile', {
   },
 });
 
-export const allgroupsPageRouteName = 'All_Groups_Page';
+export const allgroupsPageRouteName = 'All_Groups_Directory';
 userRoutes.route('/all-groups', {
   name: allgroupsPageRouteName,
   action() {
