@@ -23,7 +23,8 @@
       "contents": [
         {
           "name": "Strange Club",
-          "interests": [],
+          "interests": [
+          ],
           "website": "www.strangerthings.com",
           "email": "strangclub@hawaii.edu",
           "type": "Hobby",
@@ -44,42 +45,6 @@
           "interests": [
           ],
           "image": "/images/altenberg.jpg"
-        },
-        {
-          "first_name": "Kyungim",
-          "last_name": "Baek",
-          "username": "baek",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-          ],
-          "image": "/images/baek.jpg"
-        },
-        {
-          "first_name": "Edo",
-          "last_name": "Biagioni",
-          "username": "esb",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-          ],
-          "image": "/images/biagioni.jpg"
-        },
-        {
-          "first_name": "Kim",
-          "last_name": "Binsted",
-          "username": "binsted",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-          ],
-          "image": "/images/binsted.jpg"
-        },
-        {
-          "first_name": "Henri",
-          "last_name": "Casanova",
-          "username": "henric",
-          "bio": "I am a Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-          ],
-          "image": "/images/casanova.jpg"
         },
         {
           "first_name": "Nolan",

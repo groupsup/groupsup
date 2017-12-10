@@ -19,7 +19,7 @@ class GroupCollection extends BaseCollection {
 		}, { tracker: Tracker }));
 	}
 
-	define({ name = '', interest_id = [], website = '', email = '', type = '', location = '', time = '', route = '' }) {
+	define({ name = '', interests = [], website = '', email = '', type = '', location = '', time = '', route = '' }) {
 		const checkPattern = { name: String, website: String, email: String, type: String, location: String, time: String, route: String };
 		check({ name, website, email, type, location, time, route }, checkPattern);
 		
@@ -27,7 +27,7 @@ class GroupCollection extends BaseCollection {
 			throw new Meteor.Error(`${name} is already an exsisting group`);
 		}
 
-		return this._collection.insert( { name, interest_id } );
+		return this._collection.insert( { name, interests, website, email, type, location, time, route } );
 	}
 
 	dumpOne(docID) {
