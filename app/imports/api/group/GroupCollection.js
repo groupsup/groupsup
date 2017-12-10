@@ -9,17 +9,39 @@ class GroupCollection extends BaseCollection {
 	constructor() {
 		super('Group', new SimpleSchema ({
 			name: { type: String },
-			interest_id: [Number],
+			interests: [String],
+			website: { type: String }, 
+			email: { type: String },
+			type: { type: String },
+			location: { type: String },
+			time: { type: String },
+			route: { type: String }
 		}, { tracker: Tracker }));
 	}
 
-	define({name = '', interest_id = [] }) {
-		check(name, String);
+	define({ name = '', interest_id = [], website = '', email = '', type = '', location = '', time = '', route = '' }) {
+		const checkPattern = { name: String, website: String, email: String, type: String, location: String, time: String, route: String };
+		check({ name, website, email, type, location, time, route }, checkPattern);
+		
 		if (this.find({ name }).count() > 0) {
 			throw new Meteor.Error(`${name} is already an exsisting group`);
 		}
+
 		return this._collection.insert( { name, interest_id } );
 	}
+
+	dumpOne(docID) {
+    const doc = this.findDoc(docID);
+    const name = doc.name;
+    const interests = doc.interests;
+    const website = doc.website;
+    const email = doc.email;
+    const type = doc.type;
+    const location = doc.location;
+    const time = doc.time;
+    const route = doc.route;
+    return { name, website, email, type, location, time, route, interests };
+  }
 }
 
 export const Groups = new GroupCollection();

@@ -23,11 +23,13 @@
       "contents": [
         {
           "name": "Strange Club",
-          "interest_id": []
-        },
-        {
-          "name": "The Club",
-          "interest_id": []
+          "interests": [],
+          "website": "www.strangerthings.com",
+          "email": "strangclub@hawaii.edu",
+          "type": "Hobby",
+          "location": "UH Manoa Campus, POST 301",
+          "time": "Friday and Tuesdays @ 4:30pm",
+          "route": ""
         }
       ]
     },
@@ -40,7 +42,7 @@
           "username": "altenber",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Evolutionary Computation"
+      
           ],
           "image": "/images/altenberg.jpg"
         },
@@ -50,7 +52,7 @@
           "username": "baek",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Computer Vision"
+            
           ],
           "image": "/images/baek.jpg"
         },
@@ -60,8 +62,7 @@
           "username": "esb",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Mobile Networks",
-            "Sailing"
+
           ],
           "image": "/images/biagioni.jpg"
         },
@@ -71,8 +72,7 @@
           "username": "binsted",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Mars",
-            "Imu Cooking"
+
           ],
           "image": "/images/binsted.jpg"
         },
@@ -83,8 +83,7 @@
           "github": "henricasanova",
           "bio": "I am a Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            "Surfing",
-            "Photography"
+
           ],
           "image": "/images/casanova.jpg"
         }
