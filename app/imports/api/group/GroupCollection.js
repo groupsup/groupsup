@@ -9,13 +9,14 @@ class GroupCollection extends BaseCollection {
 	constructor() {
 		super('Group', new SimpleSchema ({
 			name: { type: String },
-			interests: [String],
-			website: { type: String }, 
-			email: { type: String },
-			type: { type: String },
-			location: { type: String },
-			time: { type: String },
-			route: { type: String }
+			interests: { type: Array, optional: true },
+      'interests.$': { type: String }, 
+			website: { type: String, optional: true }, 
+			email: { type: String, optional: true },
+			type: { type: String, optional: true },
+			location: { type: String, optional: true },
+			time: { type: String, optional: true },
+			route: { type: String, optional: true }
 		}, { tracker: Tracker }));
 	}
 
@@ -26,6 +27,10 @@ class GroupCollection extends BaseCollection {
 		if (this.find({ name }).count() > 0) {
 			throw new Meteor.Error(`${name} is already an exsisting group`);
 		}
+
+    if (interests.length !== _.uniq(interests).length) {
+      throw new Meteor.Error(`${interests} contains duplicates`);
+    }
 
 		return this._collection.insert( { name, interests, website, email, type, location, time, route } );
 	}

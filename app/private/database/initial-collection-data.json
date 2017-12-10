@@ -22,15 +22,14 @@
       "name": "GroupCollection",
       "contents": [
         {
-          "name": "Strange Club",
-          "interests": [
-          ],
-          "website": "www.strangerthings.com",
-          "email": "strangclub@hawaii.edu",
-          "type": "Hobby",
-          "location": "UH Manoa Campus, POST 301",
-          "time": "Friday and Tuesdays @ 4:30pm",
-          "route": ""
+          "name": "Group Lee",
+          "interests": [],
+          "website": "www.hawai.edu",
+          "email": "yaboy@hawaii.edu",
+          "type": "Funsies",
+          "location": "Manoa",
+          "time": "Tuesdays @ 4:20pm",
+          "route": "group-lee"
         }
       ]
     },
