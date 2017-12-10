@@ -12,7 +12,9 @@ Template.Group_Page.onCreated(function onCreated() {
 });
 
 Template.Group_Page.helpers({
-
+  isAdmin() { // setup admin check here.
+    return true;
+  },
 });
 
 Template.Group_Page.events({
