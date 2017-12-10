@@ -42,7 +42,6 @@
           "username": "altenber",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-      
           ],
           "image": "/images/altenberg.jpg"
         },
@@ -52,7 +51,6 @@
           "username": "baek",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-            
           ],
           "image": "/images/baek.jpg"
         },
@@ -62,7 +60,6 @@
           "username": "esb",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-
           ],
           "image": "/images/biagioni.jpg"
         },
@@ -72,7 +69,6 @@
           "username": "binsted",
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-
           ],
           "image": "/images/binsted.jpg"
         },
@@ -80,10 +76,17 @@
           "first_name": "Henri",
           "last_name": "Casanova",
           "username": "henric",
-          "github": "henricasanova",
           "bio": "I am a Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
-
+          ],
+          "image": "/images/casanova.jpg"
+        },
+        {
+          "first_name": "Nolan",
+          "last_name": "Laranio",
+          "username": "nlaranio",
+          "bio": "I am a Professor of Information and Computer Sciences at the University of Hawaii.",
+          "interests": [
           ],
           "image": "/images/casanova.jpg"
         }

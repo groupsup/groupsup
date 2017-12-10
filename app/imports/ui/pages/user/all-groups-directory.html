@@ -1,0 +1,11 @@
+<template name="All_Groups_Directory">
+  <div class="ui container">
+    <div class="ui dividing header">All Groups</div>
+    <div style="margin-top: 20px" class="ui cards segment">
+      {{#each profile in profiles }}
+      {{> Directory_Profile profile=profile }}
+      {{/each}}
+    </div>
+  </div>
+
+</template>

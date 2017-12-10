@@ -6,14 +6,14 @@ import { Interests } from '/imports/api/interest/InterestCollection';
 
 const selectedInterestsKey = 'selectedInterests';
 
-Template.Club_Page.onCreated(function onCreated() {
+Template.Group_Page.onCreated(function onCreated() {
   this.subscribe(Interests.getPublicationName());
   this.subscribe(Profiles.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(selectedInterestsKey, undefined);
 });
 
-Template.Club_Page.helpers({
+Template.Group_Page.helpers({
   profiles() {
     // Initialize selectedInterests to all of them if messageFlags is undefined.
     if (!Template.instance().messageFlags.get(selectedInterestsKey)) {
@@ -26,7 +26,8 @@ Template.Club_Page.helpers({
   },
 
   interests() {
-    return _.map(Interests.findAll(),
+    return _.map(
+        Interests.findAll(),
         function makeInterestObject(interest) {
           return {
             label: interest.name,
@@ -36,7 +37,7 @@ Template.Club_Page.helpers({
   },
 });
 
-Template.Club_Page.events({
+Template.Group_Page.events({
   'submit .filter-data-form'(event, instance) {
     event.preventDefault();
     const selectedOptions = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
