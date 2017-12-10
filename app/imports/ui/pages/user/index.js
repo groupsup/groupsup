@@ -7,3 +7,5 @@ import './edit-profile-page.html';
 import './edit-profile-page';
 import './dashboard.html';
 import './dashboard.js';
+import './edit-group-page.html';
+import './edit-group-page.js';
