@@ -93,7 +93,7 @@ userRoutes.route('/group', {
 
 export const editgroupPageRouteName = 'Edit_Group_Page';
 userRoutes.route('/edit-group', {
-  name: groupPageRouteName,
+  name: editgroupPageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: editgroupPageRouteName });
   },
