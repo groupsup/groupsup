@@ -91,14 +91,13 @@ userRoutes.route('/group', {
   },
 });
 
-export const clubPageRouteName = 'Club_Page';
-userRoutes.route('/clubs', {
-  name: clubPageRouteName,
+export const editgroupPageRouteName = 'Edit_Group_Page';
+userRoutes.route('/edit-group', {
+  name: groupPageRouteName,
   action() {
-    BlazeLayout.render('User_Layout', { main: clubPageRouteName });
+    BlazeLayout.render('User_Layout', { main: editgroupPageRouteName });
   },
 });
-
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
   action() {
