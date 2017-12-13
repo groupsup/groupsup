@@ -83,6 +83,14 @@ userRoutes.route('/all-groups', {
   },
 });
 
+export const modPageRouteName = 'Mod_Filter_Page';
+userRoutes.route('/mod', {
+  name: modPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: modPageRouteName });
+  },
+});
+
 export const groupPageRouteName = 'Group_Page';
 userRoutes.route('/group', {
   name: groupPageRouteName,
