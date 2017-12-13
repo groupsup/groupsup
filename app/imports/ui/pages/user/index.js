@@ -9,3 +9,5 @@ import './dashboard.html';
 import './dashboard.js';
 import './edit-group-page.html';
 import './edit-group-page.js';
+import './mod-page.html';
+import './mod-page.js';
