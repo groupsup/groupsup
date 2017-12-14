@@ -10,12 +10,12 @@ class GroupCollection extends BaseCollection {
 		super('Group', new SimpleSchema ({
 			name: { type: String },
 			interest_id: [Number],
-      meeting_info: String,
-      admin: String,
-      group_image: String,
-      image_one: String,
-      image_two: String,
-      image_three: String,
+      meeting_info: { type: String, optional: true },
+      admin: { type: String, optional: true },
+      group_image: { type: String, optional: true },
+      image_one: { type: String, optional: true },
+      image_two: { type: String, optional: true },
+      image_three: { type: String, optional: true },
 
 		}, { tracker: Tracker }));
 	}

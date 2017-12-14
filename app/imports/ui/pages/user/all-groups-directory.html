@@ -2,8 +2,8 @@
   <div class="ui container">
     <div class="ui dividing header">All Groups</div>
     <div style="margin-top: 20px" class="ui cards segment">
-      {{#each profile in profiles }}
-      {{> Directory_Profile profile=profile }}
+      {{#each group in groups }}
+      {{> Directory_Group group=group }}
       {{/each}}
     </div>
   </div>
