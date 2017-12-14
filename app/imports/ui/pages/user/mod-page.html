@@ -1,0 +1,28 @@
+<template name="Mod_Filter_Page">
+  {{#if isInRole 'admin'}}
+  {{#if Template.subscriptionsReady}}
+
+  <div class="ui text container segment">
+    <div style="text-align: center" class="ui dividing header">
+      Moderator
+    </div>
+  </div>
+
+  <div style="margin-top: 30px" class="ui cards">
+    {{#each profile in profiles }}
+    {{> Directory_Profile profile = profile }}
+    <button class="ui primary button" type="submit">Remove the post</button>
+
+    {{#if displaySuccessMessage}}
+
+    <div class="ui success message">
+      <p>Event successfully removed </p>
+    </div>
+    {{/if}}
+    {{/each}}
+  </div>
+  {{else}}
+  <h1>Not Authorized to view page</h1>
+  {{/if}}
+  {{/if}}
+</template>
