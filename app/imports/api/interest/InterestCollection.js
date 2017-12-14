@@ -18,10 +18,9 @@ class InterestCollection extends BaseCollection {
    */
   constructor() {
     super('Interest', new SimpleSchema({
-      name: { 
-        type: String 
-      },
-      groups_id: [Number],
+      name: { type: String },
+      groups_id: { type: Array },
+      'groups_id.$': { type: Number },
     }, { tracker: Tracker }));
   }
 
