@@ -4,6 +4,8 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
+import {Roles} from 'meteor/alanning:roles';
+import { Accounts } from 'meteor/accounts-base';
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
@@ -48,6 +50,12 @@ Template.Edit_Profile_Page.events({
     const last_name = event.target.Last.value;
     const image = event.target.Image.value;
     const bio = event.target.Bio.value;
+    const admin = $(event.target).is(":checked").val();
+
+    if (admin)
+    {
+      Roles.addUsersToRoles(user, 'admin');
+    }
     const username = FlowRouter.getParam('username'); // schema requires username.
 
     const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);

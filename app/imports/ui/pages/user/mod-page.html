@@ -4,14 +4,14 @@
 
   <div class="ui text container segment">
     <div style="text-align: center" class="ui dividing header">
-      Moderator
+      Welcome Moderator
     </div>
   </div>
 
   <div style="margin-top: 30px" class="ui cards">
     {{#each profile in profiles }}
     {{> Directory_Profile profile = profile }}
-    <button class="ui primary button" type="submit">Remove the post</button>
+    <button class="ui primary button" type="submit">Remove</button>
 
     {{#if displaySuccessMessage}}
 
@@ -22,7 +22,11 @@
     {{/each}}
   </div>
   {{else}}
-  <h1>Not Authorized to view page</h1>
+
+
   {{/if}}
+  {{else}}
+  <h1>You are not a moderator</h1>
   {{/if}}
+
 </template>

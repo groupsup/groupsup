@@ -10,6 +10,7 @@ Accounts.validateNewUser(function validate(user) {
     if (!Profiles.isDefined(username)) {
       Profiles.define({ username });
     }
+    Roles.addUsersToRoles(user, 'user');
   }
   // All UH users are valid for BowFolios.
   return true;
