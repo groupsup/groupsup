@@ -7,6 +7,7 @@ import { Interests } from '/imports/api/interest/InterestCollection';
 import {Roles} from 'meteor/alanning:roles';
 import { Accounts } from 'meteor/accounts-base';
 
+
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
 
@@ -50,17 +51,18 @@ Template.Edit_Profile_Page.events({
     const last_name = event.target.Last.value;
     const image = event.target.Image.value;
     const bio = event.target.Bio.value;
+    const username = FlowRouter.getParam('username');
 
-    /** this is breaking it
-    const admin = $(event.target).is(":checked").val();
-
-    if (admin)
+    var categorySelected = $('.boxCheck:checked').val();
+    if (categorySelected)
     {
-      Roles.addUsersToRoles(FlowRouter.getParam('username'), 'admin');
+      var userId = Meteor.userId();
+      Roles.addUsersToRoles(userID, 'admin');
     }
-    **/
 
-    const username = FlowRouter.getParam('username'); // schema requires username.
+
+
+    // schema requires username.
 
     const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
     const interests = _.map(selectedInterests, (option) => option.value);
