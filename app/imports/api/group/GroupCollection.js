@@ -10,6 +10,13 @@ class GroupCollection extends BaseCollection {
 		super('Group', new SimpleSchema ({
 			name: { type: String },
 			interest_id: [Number],
+      meeting_info: String,
+      admin: String,
+      group_image: String,
+      image_one: String,
+      image_two: String,
+      image_three: String,
+
 		}, { tracker: Tracker }));
 	}
 

@@ -50,12 +50,16 @@ Template.Edit_Profile_Page.events({
     const last_name = event.target.Last.value;
     const image = event.target.Image.value;
     const bio = event.target.Bio.value;
+
+    /** this is breaking it
     const admin = $(event.target).is(":checked").val();
 
     if (admin)
     {
-      Roles.addUsersToRoles(user, 'admin');
+      Roles.addUsersToRoles(FlowRouter.getParam('username'), 'admin');
     }
+    **/
+
     const username = FlowRouter.getParam('username'); // schema requires username.
 
     const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
