@@ -78,6 +78,22 @@
           "image": "/images/casanova.jpg"
         }
       ]
+    },
+
+    {
+      "name": "GroupCollection",
+      "contents": [
+        {
+          "name": "ACM",
+          "interest_id": 22,
+          "meeting_info": "Tuesday Busad A101",
+          "admin": "nlaranio",
+          "group_image": "https://semantic-ui.com/images/wireframe/image.png",
+          "image_one": "https://semantic-ui.com/images/wireframe/image.png",
+          "image_two": "https://semantic-ui.com/images/wireframe/image.png",
+          "image_three": "https://semantic-ui.com/images/wireframe/image.png"
+        }
+      ]
     }
   ]
 }
