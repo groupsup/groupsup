@@ -21,6 +21,12 @@
         {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
       </div>
 
+      <div class="checkbox">
+        <label>
+          <input type = "checkbox" {{checked}} class = "toggle-checked" > Are you an admin?
+        </label>
+      </div>
+
       {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Short bio statement here" errorMessage=(fieldError "bio")}}
 
       <button class="ui primary button" type="submit">Submit</button>

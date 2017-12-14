@@ -23,7 +23,7 @@ class GroupCollection extends BaseCollection {
 	define({name = '', interest_id = [] }) {
 		check(name, String);
 		if (this.find({ name }).count() > 0) {
-			throw new Meteor.Error(`${name} is already an exsisting group`);
+			throw new Meteor.Error(`${name} is already an existing group`);
 		}
 		return this._collection.insert( { name, interest_id } );
 	}
