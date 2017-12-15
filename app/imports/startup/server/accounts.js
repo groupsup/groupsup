@@ -7,6 +7,9 @@ import { Profiles } from '/imports/api/profile/ProfileCollection';
 Accounts.validateNewUser(function validate(user) {
   if (user) {
     const username = user.services.cas.id;
+    let userId = Meteor.userId();
+
+    Roles.addUsersToRoles( userId, [ 'admin' ]);
     if (!Profiles.isDefined(username)) {
       Profiles.define({ username });
     }

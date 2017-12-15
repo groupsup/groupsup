@@ -1,0 +1,43 @@
+<template name="Edit_Group_Page">
+
+  {{#if Template.subscriptionsReady}}
+
+  <div class="ui text container segment">
+    <div class="ui dividing header">
+      Profile
+    </div>
+    <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+
+      <div class="fields">
+        {{> Text_Form_Control label="TimeAndPlace" placeholder="Meeting Information" value=Group.meeting errorMessage=(fieldError "meeting")}}
+      </div>
+
+      <div class="field">
+        {{> Text_Form_Control label="GroupPicture" placeholder="Group Picture" value=group.group_picture errorMessage=(fieldError "group_picture")}}
+      </div>
+
+      <div class="field">
+        {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
+      </div>
+
+      {{> TextArea_Form_Control label="About" value=group.about placeholder="About your group" errorMessage=(fieldError "about")}}
+
+      <div class="fields">
+        {{> Text_Form_Control label="ImageOne" placeholder="Image One" value=group.image_one errorMessage=(fieldError "image_one")}}
+        {{> Text_Form_Control label="ImageTwo" placeholder="Image Two" value=group.image_two errorMessage=(fieldError "image_two")}}
+        {{> Text_Form_Control label="ImageThree" placeholder="Image Three" value=group.image_three errorMessage=(fieldError "image_three")}}
+        {{> Text_Form_Control label="ImageFour" placeholder="Image Four" value=group.image_four errorMessage=(fieldError "image_one")}}
+      </div>
+
+      <button class="ui primary button" type="submit">Submit</button>
+      {{#if displaySuccessMessage}}
+      <div class="ui success message">
+        <p>Group data successfully updated.</p>
+      </div>
+      {{/if}}
+    </form>
+  </div>
+
+  {{/if}}
+
+</template>

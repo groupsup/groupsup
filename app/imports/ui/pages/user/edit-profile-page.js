@@ -4,6 +4,9 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
+import {Roles} from 'meteor/alanning:roles';
+import { Accounts } from 'meteor/accounts-base';
+
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
@@ -44,21 +47,30 @@ Template.Edit_Profile_Page.helpers({
 Template.Edit_Profile_Page.events({
   'submit .profile-data-form'(event, instance) {
     event.preventDefault();
-    const firstName = event.target.First.value;
-    const lastName = event.target.Last.value;
-    const title = event.target.Title.value;
-    const location = event.target.Location.value;
-    const username = FlowRouter.getParam('username'); // schema requires username.
-    const picture = event.target.Picture.value;
-    const github = event.target.Github.value;
-    const facebook = event.target.Facebook.value;
-    const instagram = event.target.Instagram.value;
+    const first_name = event.target.First.value;
+    const last_name = event.target.Last.value;
+    const image = event.target.Image.value;
     const bio = event.target.Bio.value;
+    const username = FlowRouter.getParam('username');
+
+    var categorySelected = $('.boxCheck:checked').val();
+    if (categorySelected)
+    {
+      var userId = Meteor.userId();
+      Roles.addUsersToRoles(userID, 'admin');
+    }
+
+
+
+    // schema requires username.
+
     const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
     const interests = _.map(selectedInterests, (option) => option.value);
 
-    const updatedProfileData = { firstName, lastName, title, picture, github, facebook, instagram, bio, interests,
-      username };
+    const updatedProfileData = {
+      first_name, last_name, image, bio, interests,
+      username,
+    };
 
     // Clear out any old validation errors.
     instance.context.reset();

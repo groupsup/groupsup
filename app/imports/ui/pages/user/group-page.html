@@ -1,0 +1,45 @@
+<template name="Group_Page">
+  {{#if Template.subscriptionsReady}}
+  <div class="ui text container segments">
+    <div class="ui dividing segment" style="margin-bottom: 3em">
+      <div class="ui left floated image">
+        <img class="ui small circular image" src="/images/biagioni.jpg">
+      </div>
+      {{#if isAdmin}}
+      <div class="ui right floated header">
+        <a class="{{isActiveRoute "Edit_Group_Page"}} item" href="{{pathFor "Edit_Group_Page" username=routeUserName}}">Edit</a>
+      </div>
+      {{/if}}
+      <div class="ui huge header">Group Name</div>
+      <div class="ui small header">Meeting time: sat blah in BUSADA101</div>
+    </div>
+
+    <div class="ui segment">
+      <div class="ui grid">
+        <div class="sixteen wide column">
+          <div class="row">
+              <div class="ui horizontal centered divided list">
+                <div class="item">interest one</div>
+                <div class="item">interest two</div>
+                <div class="item">interest three</div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui header">About Us</div>
+      Bacon ipsum dolor amet cow turducken pig swine. Chuck ground round pork belly short loin beef salami hamburger bresaola. Meatloaf pancetta corned beef, filet mignon turducken short loin brisket bresaola bacon boudin porchetta pig short ribs. Cupim ham burgdoggen picanha beef fatback, bresaola strip steak capicola jerky. Leberkas biltong drumstick pork chop. Hamburger ball tip strip steak drumstick tenderloin pork chop beef turducken bresaola brisket shoulder chuck venison burgdoggen pork. Picanha beef ribs pork loin, chicken salami chuck ham hock ham tongue sirloin cow.
+
+      <div class="ui divider"></div>
+
+      <div class="ui small centered images">
+        <img src="https://semantic-ui.com/images/wireframe/image.png">
+        <img src="https://semantic-ui.com/images/wireframe/image.png">
+        <img src="https://semantic-ui.com/images/wireframe/image.png">
+        <img src="https://semantic-ui.com/images/wireframe/image.png">
+      </div>
+
+    </div>
+  </div>
+  {{/if}}
+</template>

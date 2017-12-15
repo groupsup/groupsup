@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
-import { Profiles } from '/imports/api/profile/ProfileCollection';
+import { Groups } from '/imports/api/profile/GroupCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
 
 const displaySuccessMessage = 'displaySuccessMessage';
@@ -10,11 +10,11 @@ const displayErrorMessages = 'displayErrorMessages';
 
 Template.Profile_Page.onCreated(function onCreated() {
   this.subscribe(Interests.getPublicationName());
-  this.subscribe(Profiles.getPublicationName());
+  this.subscribe(Groups.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = Profiles.getSchema().namedContext('Profile_Page');
+  this.context = Groups.getSchema().namedContext('Profile_Page');
 });
 
 Template.Profile_Page.helpers({
@@ -27,6 +27,7 @@ Template.Profile_Page.helpers({
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
+  /**
   profile() {
     return Profiles.findDoc(FlowRouter.getParam('username'));
   },
@@ -40,12 +41,13 @@ Template.Profile_Page.helpers({
         },
     );
   },
+  **/
   routeUserName() {
     return FlowRouter.getParam('username');
   },
 });
 
-
+/**
 Template.Profile_Page.events({
   'submit .profile-data-form'(event, instance) {
     event.preventDefault();
@@ -62,7 +64,7 @@ Template.Profile_Page.events({
     const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
     const interests = _.map(selectedInterests, (option) => option.value);
 
-    const updatedProfileData = { firstName, lastName, title, picture, github, facebook, instagram, bio, interests, admin,
+    const updatedProfileData = { firstName, lastName, title, picture, github, facebook, instagram, bio, interests,
       username };
 
     // Clear out any old validation errors.
@@ -82,5 +84,6 @@ Template.Profile_Page.events({
       instance.messageFlags.set(displayErrorMessages, true);
     }
   },
-});
 
+});
+**/
