@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
-import Roles from '/alanning/roles';
+import {Roles} from 'meteor/alanning:roles';
 import { Interests } from '/imports/api/interest/InterestCollection';
 import { Groups } from '/imports/api/group/GroupCollection';
 
@@ -39,12 +39,4 @@ Template.Mod_Filter_Page.helpers({
           };
         });
     },
-});
-
-Template.Mod_Filter_Page.group({
-  'submit .filter-data-form'(group, instance) {
-    group.preventDefault();
-    const selectedOptions = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
-    instance.messageFlags.set(selectedInterestsKey, _.map(selectedOptions, (option) => option.value));
-  },
 });
